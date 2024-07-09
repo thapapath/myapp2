@@ -2,6 +2,12 @@ kind: pipeline
 type: kubernetes
 name: default
 
+trigger:
+  event:
+  - push
+  branch:
+  - master
+
 steps:
 - name: install_dependencies
   image: node:14
