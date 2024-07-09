@@ -1,5 +1,5 @@
 kind: pipeline
-type: kubernetes
+type: docker
 name: default
 
 steps:
@@ -36,3 +36,4 @@ steps:
       from_secret: kubernetes_token
   commands:
   - helm upgrade --install myapp ./helm --set image.repository=your-docker-repo/myapp --set image.tag=${DRONE_COMMIT_SHA}
+
