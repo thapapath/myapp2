@@ -8,6 +8,13 @@ steps:
   commands:
   - npm install
 
+- name: debug
+  image: node:14
+  commands:
+  - ls -la
+  - ls -la src
+  - ls -la test
+
 - name: test
   image: node:14
   commands:
@@ -37,3 +44,6 @@ steps:
   commands:
   - helm upgrade --install myapp ./helm --set image.repository=your-docker-repo/myapp --set image.tag=${DRONE_COMMIT_SHA}
 
+trigger:
+  branch:
+    - master
