@@ -1,6 +1,6 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../src/app'); // Ensure the path to your app.js is correct
+const app = require('../src/app');
 const { expect } = chai;
 
 chai.use(chaiHttp);
@@ -15,3 +15,4 @@ describe('GET /', () => {
         done();
       });
   });
+});
