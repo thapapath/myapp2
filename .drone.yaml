@@ -11,6 +11,7 @@ steps:
 - name: debug
   image: node:14
   commands:
+  - cat package.json
   - ls -la
   - ls -la src
   - ls -la test
@@ -33,17 +34,4 @@ steps:
       from_secret: docker_password
 
 - name: deploy
-  image: alpine/helm:3.5.4
-  environment:
-    KUBERNETES_SERVICE_HOST:
-      from_secret: kubernetes_service_host
-    KUBERNETES_SERVICE_PORT:
-      from_secret: kubernetes_service_port
-    KUBERNETES_TOKEN:
-      from_secret: kubernetes_token
-  commands:
-  - helm upgrade --install myapp ./helm --set image.repository=your-docker-repo/myapp --set image.tag=${DRONE_COMMIT_SHA}
-
-trigger:
-  branch:
-    - master
+  image:
