@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-helm-app
+  name: myapp2
   namespace: argocd
 spec:
   project: my-project
@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/thapapath/myapp2.git
     targetRevision: HEAD
     path: helm
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: my-app-namespace
@@ -16,6 +19,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  helm:
-    valueFiles:
-      - values.yaml
