@@ -1,0 +1,8 @@
+runner:
+  replicas: 1
+  env:
+    DRONE_RPC_HOST: "http://192.168.49.2"   # The address of your Drone server
+    DRONE_RPC_SECRET: "C8dpvp9LwVZ3auTt"   # The same secret used for the Drone server
+    DRONE_RUNNER_CAPACITY: 2                # The number of concurrent builds the runner can handle
+    DRONE_RUNNER_NAME: "drone-runner"
+    DRONE_SERVER_PROTO: "http"              # The protocol used by the Drone server
