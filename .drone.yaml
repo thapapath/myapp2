@@ -30,7 +30,7 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    repo: your-docker-repo/myapp
+    repo: thapapath/myapp2
     tags:
       - ${DRONE_COMMIT_SHA}
     registry: docker.io
@@ -41,3 +41,8 @@ steps:
 
 - name: deploy
   image:
+
+- name: cache-reset
+  image: alpine
+  commands:
+  - rm -rf /drone/src/*
