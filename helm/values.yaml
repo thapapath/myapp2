@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: myapp
+  repository: thapapath/myapp2
   tag: "latest"
   pullPolicy: IfNotPresent
 service:
