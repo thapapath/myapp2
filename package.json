@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "mocha",
-    "start": "node src/app.js"
+    "test": "mocha"
   },
   "dependencies": {
     "express": "^4.17.1"
